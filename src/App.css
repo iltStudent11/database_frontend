@@ -1,0 +1,237 @@
+body {
+  /* Animated multi-color radial gradient background, radiating from top left, with Victorian green between pink and purple */
+  background: radial-gradient(circle at 0% 0%, #fff 0%, #d76d77 18%, #c4ffd2 32%, #7b2ff2 60%, #c0c0c0 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Cinzel', 'Georgia', serif;
+  color: #fffbe7;
+  animation: gradientMove 18s ease-in-out infinite alternate;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 10% 10%;
+  }
+}
+
+@keyframes star-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-18px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+}
+
+h1, h2 {
+  font-family: 'Cinzel', 'Georgia', serif;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #1b3358, 0 0 20px #ffd70066;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add extra space for the nav bar */
+  min-height: 5.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 2rem 0 2.5rem 0;
+  /* Make the nav bar longer and angled with a gradient */
+  background: linear-gradient(100deg, #fff 0%, #d76d77 40%, #7b2ff2 80%, #c0c0c0 100%);
+  border-radius: 2.5rem;
+  box-shadow: 0 2px 24px #7b2ff288;
+  min-width: 520px;
+  max-width: 90vw;
+  align-items: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+nav ul li {
+  display: block;
+}
+
+nav a {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd700 0%, #fffbe7 100%);
+  color: #0a174e;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-weight: 600;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 12px #ffd70044;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  border: 2px solid #ffd700;
+  text-shadow: none;
+}
+
+nav a:hover {
+  background: linear-gradient(90deg, #fffbe7 0%, #ffd700 100%);
+  color: #1b3358;
+  box-shadow: 0 4px 24px #ffd70099, 0 0 8px #fffbe7cc;
+  text-shadow: none;
+}
+
+.App-header {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+/* Glassmorphism for cards/lists */
+ul, .glass-card {
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 16px #1b3358cc;
+  max-width: 600px;
+  margin: 2rem auto;
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  border: 1.5px solid rgba(255,255,255,0.25);
+}
+
+li {
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+}
+
+/* Intensified Sparkle/particle overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: url('https://svgshare.com/i/12dA.svg') repeat;
+  opacity: 0.28; /* Increased from 0.12 for more sparkle */
+  z-index: 9999;
+  animation: sparkle 10s linear infinite;
+  background-size: 180px 180px; /* Smaller for denser effect */
+}
+
+@keyframes sparkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 400px 400px; }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Optional: Add a random blob overlay for more organic, random color shapes */
+#random-blobs {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Aurora effect overlay */
+#aurora-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.aurora-shape {
+  position: absolute;
+  width: 80vw;
+  height: 40vh;
+  left: 10vw;
+  top: 10vh;
+  background: linear-gradient(120deg, rgba(123,47,242,0.18) 0%, rgba(58,141,222,0.13) 40%, rgba(196,255,210,0.13) 70%, rgba(255,255,255,0.10) 100%);
+  filter: blur(48px) brightness(1.2) saturate(1.3);
+  border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+  animation: aurora-move 12s ease-in-out infinite alternate;
+}
+
+.aurora-shape2 {
+  position: absolute;
+  width: 60vw;
+  height: 30vh;
+  left: 30vw;
+  top: 40vh;
+  background: linear-gradient(100deg, rgba(215,109,119,0.13) 0%, rgba(192,192,192,0.10) 60%, rgba(196,255,210,0.10) 100%);
+  filter: blur(36px) brightness(1.1) saturate(1.2);
+  border-radius: 50% 50% 60% 40% / 60% 40% 50% 50%;
+  animation: aurora-move2 14s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-move {
+  0% { transform: translateY(0) scaleX(1); }
+  100% { transform: translateY(-30px) scaleX(1.1); }
+}
+
+@keyframes aurora-move2 {
+  0% { transform: translateY(0) scaleX(1); }
+  100% { transform: translateY(30px) scaleX(0.95); }
+}
